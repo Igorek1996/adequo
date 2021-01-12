@@ -1,0 +1,27 @@
+.fancybox-content {
+    padding: 0;
+    border-radius: 4px;
+}
+.modal {
+    display: none;
+    width: 690px;
+    max-width: 100%;
+    padding: 50px 163px 60px;
+    text-align: center;
+    border-radius: 4px;
+    @include m-phone() {
+        padding: 30px 20px 30px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        margin-bottom: 40px;
+    }
+
+    &__form {
+
+    }
+}

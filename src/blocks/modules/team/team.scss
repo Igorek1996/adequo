@@ -1,0 +1,116 @@
+.team {
+    &__title {
+        margin-bottom: 54px;
+        @include m-phone() {
+            margin-bottom: 30px;
+        }
+    }
+    &__container {
+        .owl-stage-outer {
+            overflow: visible;
+        }
+        .owl-stage {
+            display: flex;
+            align-items: stretch;
+        }
+        .owl-item {
+            opacity: 0.5;
+        }
+        .owl-item.active {
+            opacity: 1;
+
+            .team {
+                &__item {
+                    @include m-phone() {
+                        box-shadow: 0px 20px 40px rgba(203, 203, 203, 0.3);
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        width: 282px;
+        height: 100%;
+        @include m-phone() {
+            width: 250px;
+        }
+        &:hover {
+            box-shadow: 0px 20px 40px rgba(203, 203, 203, 0.3);
+            border-radius: 4px;
+            @include m-phone() {
+                box-shadow: none;
+            }
+            .team {
+                &__icon {
+                    opacity: 1;
+                }
+                &__item-title {
+                    color: $color_main;
+                }
+            }
+        }
+    }
+
+    &__img {
+        height: 205px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        position: relative;
+        padding: 50px 30px 40px;
+        @include m-phone() {
+            padding: 50px 20px 30px;
+        }
+    }
+
+    &__icon {
+        width: 74px;
+        height: 74px;
+        padding: 22px;
+        background-color: $color_white;
+        border-radius: 50%;
+        position: absolute;
+        left: 8px;
+        top: 0;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: $trsn;
+        @include m-phone() {
+            opacity: 1;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 102, 21, 0.1);
+            border-radius: 50%;
+        }
+    }
+
+    &__item-title {
+        transition: $trsn;
+        margin-bottom: 30px;
+        @include m-tablet() {
+            color: $color_main;
+        }
+        @include m-phone() {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 22px;
+        color: #727272;
+    }
+}

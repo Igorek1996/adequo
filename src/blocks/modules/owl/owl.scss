@@ -1,0 +1,32 @@
+.owl {
+    &-nav {
+        position: absolute;
+        top: -80px;
+        right: 0;
+        width: 90px;
+        height: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-next {
+        transform: scale(-1, 1);
+    }
+
+    &-prev,
+    &-next {
+        svg {
+            fill: #727272;
+            transition: $trsn;
+        }
+
+        &:hover {
+            svg {
+                fill: $color_main;
+                @include m-tablet() {
+                    fill: #727272;
+                }
+            }
+        }
+    }
+}

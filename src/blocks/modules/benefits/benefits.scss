@@ -1,0 +1,112 @@
+.benefits {
+    &__title {
+        margin-bottom: 58px;
+        @include m-phone() {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__container {
+        .owl-stage-outer {
+            overflow: visible;
+        }
+        .owl-stage {
+            display: flex;
+            align-items: stretch;
+        }
+        .owl-item {
+            opacity: 0.5;
+        }
+        .owl-item.active {
+            opacity: 1;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        width: 384px;
+        height: 100%;
+        border: 1px solid #f2f2f2;
+        border-radius: 4px;
+        padding: 54px 40px 40px;
+        transition: $trsn;
+        overflow: hidden;
+        position: relative;
+        @include m-phone() {
+            width: 250px;
+            padding: 10px 20px;
+            box-shadow: 0px 20px 40px rgba(203, 203, 203, 0.3);
+        }
+        &::before {
+            content: "";
+            width: 204px;
+            height: 204px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(255, 102, 21, 0.2);
+            transition: $trsn;
+            transform: translate(-100%, -100%);
+            @include m-phone() {
+                top: -130px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &:hover {
+            background: $color_white;
+            box-shadow: 0px 20px 40px rgba(203, 203, 203, 0.3);
+            &::before {
+                transform: translate(-58px, -66px);
+                @include m-phone() {
+                    transform: translateX(-50%);
+                }
+            }
+            .benefits {
+                &__item-icon {
+                    opacity: 1;
+                }
+                &__item-num {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &__item-row {
+        position: relative;
+        margin-bottom: 57px;
+        @include m-phone() {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__item-icon {
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+        transition: $trsn;
+        @include m-phone() {
+            margin: 0 auto;
+            opacity: 1;
+        }
+    }
+
+    &__item-num {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 42px;
+        line-height: 60px;
+        transition: $trsn;
+        @include m-phone() {
+            display: none;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 20px;
+    }
+}

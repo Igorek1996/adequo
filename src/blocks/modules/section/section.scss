@@ -1,0 +1,10 @@
+.section {
+    position: relative;
+    padding: 80px 0;
+    @include m-phone() {
+        padding: 30px 0;
+    }
+    &_dark {
+        background-color: #fafafa;
+    }
+}

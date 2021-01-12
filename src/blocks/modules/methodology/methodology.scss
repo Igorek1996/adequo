@@ -1,0 +1,116 @@
+.methodology {
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    &__container {
+        position: relative;
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include m-tablet() {
+            display: block;
+        }
+    }
+
+    &__item {
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 20px 40px rgba(203, 203, 203, 0.3);
+        border-radius: 4px;
+        flex: 0 0 486px;
+        width: 486px;
+        margin-bottom: 27px;
+        &:first-of-type {
+            flex: 0 0 690px;
+            width: 690px;
+            margin-right: 24px;
+            @include m-tablet-wide {
+                width: 480px;
+                flex: 0 0 480px;
+            }
+            @include m-tablet() {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        @include m-tablet() {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        @include m-phone() {
+            padding: 20px;
+        }
+    }
+
+    &__item-title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+        color: #323232;
+        margin-bottom: 30px;
+        @include m-phone() {
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+    }
+
+    &__figure {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include m-tablet-wide() {
+            bottom: 40px;
+        }
+        @include m-tablet() {
+            display: none;
+        }
+    }
+    &__figure-line {
+        position: absolute;
+        &:nth-of-type(1) {
+            bottom: 30px;
+            left: -280px;
+            width: 436px;
+            height: 90px;
+            background: url("../img/line1.svg") center center no-repeat;
+            background-size: contain;
+            @include m-tablet-wide {
+                bottom: 30px;
+                left: -50px;
+                width: 200px;
+                height: 70px;
+            }
+        }
+        &:nth-of-type(2) {
+            top: -50px;
+            left: -80px;
+            width: 233px;
+            height: 234px;
+            background: url("../img/line2.svg") center center no-repeat;
+            background-size: contain;
+        }
+        &:nth-of-type(3) {
+            top: -150px;
+            right: -30px;
+            width: 208px;
+            height: 301px;
+            background: url("../img/line3.svg") center center no-repeat;
+            background-size: contain;
+        }
+    }
+}

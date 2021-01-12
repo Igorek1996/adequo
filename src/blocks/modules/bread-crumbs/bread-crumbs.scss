@@ -1,0 +1,32 @@
+.bread-crumbs {
+    @include m-phone() {
+        display: none;
+    }
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 22px;
+        color: #727272;
+        border-bottom: 1px solid transparent;
+        margin-right: 15px;
+        &:hover {
+            border-bottom: 1px solid currentColor;
+        }
+    }
+
+    &__arrow {
+        flex: 0 0 13px;
+        width: 13px;
+        height: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        fill: $color_main;
+        margin-right: 15px;
+        transform: scale(-1, 1);
+    }
+}

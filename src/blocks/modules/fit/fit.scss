@@ -1,0 +1,181 @@
+.fit {
+    &__container {
+        display: flex;
+        width: 996px;
+        max-width: 100%;
+        margin: 0 auto;
+        @include m-phone() {
+            display: block;
+        }
+    }
+
+    &__col {
+        text-align: center;
+        position: relative;
+        @include flex-item(2, 24px);
+        padding: 40px 30px 60px;
+        background: #fafafa;
+        border-radius: 4px;
+        overflow: hidden;
+        @include m-phone() {
+            flex: none;
+            padding: 20px;
+            max-width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        &_yes {
+            .fit {
+                &__col-icon {
+                    border: 2px solid $color_main;
+
+                    &::before {
+                        background: rgba(255, 102, 21, 0.2);
+                    }
+                }
+            }
+        }
+        &_no {
+            .fit {
+                &__col-icon {
+                    border: 2px solid #727272;
+
+                    &::before {
+                        background: rgba(179, 179, 177, 0.2);
+                    }
+                }
+            }
+        }
+    }
+
+    &__col-icon {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 39px;
+        height: 39px;
+        padding: 7px;
+        border-radius: 50%;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -60px;
+            right: -70px;
+            width: 204px;
+            height: 204px;
+            border-radius: 50%;
+            @include m-phone() {
+                width: 145px;
+                height: 145px;
+                bottom: -35px;
+                right: -35px;
+            }
+        }
+    }
+
+    &__col-title {
+        text-align: left;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        color: #323232;
+        padding-left: 70px;
+        margin-bottom: 40px;
+        @include m-phone() {
+            font-size: 18px;
+            line-height: 25px;
+            padding-left: 80px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__col-items {
+        text-align: left;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 47px;
+        @include m-phone() {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 20px 15px;
+        margin-bottom: 10px;
+        background: $color_white;
+        border-radius: 4px;
+        @include m-phone() {
+            padding: 18px 10px;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item-icon {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        stroke: $color_main;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        @include m-phone() {
+            margin-right: 10px;
+        }
+    }
+
+    &__item-text {
+        color: #727272;
+        @include m-phone() {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &__col-text {
+        color: #333333;
+        margin-bottom: 30px;
+    }
+
+    &__link {
+        &:hover {
+            .fit {
+                &__link-text {
+                    color: $color_main;
+                    @include m-tablet() {
+                        color: #333333;
+                    }
+                }
+                &__link-icon {
+                    stroke: $color_main;
+                    @include m-tablet() {
+                        stroke: #333333;
+                    }
+                }
+            }
+        }
+    }
+
+    &__link-text {
+        font-weight: bold;
+        color: #333333;
+        transition: $trsn;
+    }
+
+    &__link-icon {
+        display: inline-block;
+        width: 5px;
+        height: 10px;
+        margin-left: 20px;
+        stroke: #333333;
+        transition: $trsn;
+        stroke-width: 2px;
+    }
+}

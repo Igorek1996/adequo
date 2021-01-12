@@ -1,0 +1,177 @@
+.why {
+    background: #333333;
+    padding-bottom: 0;
+    &__title {
+        color: $color_white;
+        @include m-tablet() {
+            margin-bottom: 40px;
+        }
+        @include m-phone() {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @include m-tablet() {
+            display: block;
+        }
+    }
+
+    &__info {
+        background: #222222;
+        border-radius: 4px 4px 0px 0px;
+        flex: 0 0 384px;
+        padding: 47px 60px 60px;
+        position: relative;
+        @include m-tablet() {
+            margin-bottom: 40px;
+        }
+        @include m-phone() {
+            padding: 0;
+            padding-left: 30px;
+            background: transparent;
+        }
+        &::before {
+            content: "";
+            width: 444px;
+            height: 1px;
+            position: absolute;
+            top: -47px;
+            left: 0;
+            background-color: $color_white;
+            @include m-tablet() {
+                display: none;
+            }
+        }
+    }
+
+    &__info-item {
+        position: relative;
+        padding-left: 14px;
+        color: $color_white;
+        font-size: 30px;
+        line-height: 41px;
+        margin-bottom: 50px;
+        @include m-phone() {
+            font-size: 14px;
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
+        &::before {
+            content: "/";
+            font-size: 30px;
+            line-height: 41px;
+            position: absolute;
+            top: -5px;
+            left: 0;
+            color: $color_main;
+            @include m-phone() {
+                top: 0;
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__data {
+        margin-left: 77px;
+        flex: 0 1 100%;
+        padding-bottom: 96px;
+        @include m-tablet-wide() {
+            margin-left: 0;
+            padding: 0;
+            padding-left: 30px;
+        }
+    }
+
+    &__data-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        @include m-phone() {
+            display: block;
+        }
+    }
+
+    &__data-item {
+        @include m-phone() {
+            margin-bottom: 30px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__data-top {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        @include m-phone() {
+            justify-content: flex-start;
+            margin-bottom: 0;
+        }
+    }
+
+    &__data-icon {
+        flex: 0 0 50px;
+        width: 50px;
+        height: 50px;
+        stroke: $color_main;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    &__data-num {
+        font-size: 100px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: $color_white;
+        @include m-tablet-wide() {
+            font-size: 60px;
+        }
+        @include m-phone() {
+            font-size: 80px;
+            line-height: 109px;
+        }
+    }
+
+    &__data-text {
+        font-size: 20px;
+        line-height: 27px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color_white;
+    }
+
+    &__data-img {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        height: 330px;
+        @include m-tablet() {
+            height: 270px;
+        }
+        @include m-phone() {
+            display: none;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            max-width: none;
+            @include m-tablet() {
+                max-width: 100%;
+            }
+        }
+    }
+}

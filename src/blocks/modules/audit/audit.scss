@@ -1,0 +1,33 @@
+.audit {
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        @include m-tablet() {
+            display: block;
+        }
+    }
+
+    &__form {
+        flex: 0 0 486px;
+        width: 486px;
+        order: -1;
+        @include m-tablet() {
+            width: 100%;
+            padding-bottom: 30px;
+        }
+    }
+
+    &__info {
+    }
+
+    &__info-img {
+        @include m-tablet() {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

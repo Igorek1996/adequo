@@ -1,0 +1,188 @@
+.how {
+    &_inline {
+        .how {
+            &__item-num {
+                display: inline-block;
+                margin-right: 20px;
+            }
+
+            &__item-name {
+                display: inline-block;
+            }
+
+            &__list {
+                padding-left: 100px;
+                @include m-tablet() {
+                    padding-left: 20px;
+                }
+                @include m-phone() {
+                    padding-left: 0;
+                }
+            }
+            &__list-item {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__title {
+        margin-bottom: 40px;
+        @include m-phone() {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__content {
+        width: 345px;
+        @include m-tablet() {
+            width: 300px;
+        }
+        @include m-phone() {
+            width: 100%;
+        }
+    }
+    &__item {
+    }
+
+    &__item-data {
+        cursor: pointer;
+        border: 1px solid #f2f2f2;
+        margin-bottom: -1px;
+        padding: 20px 30px;
+        transition: $trsn;
+        position: relative;
+        @include m-phone() {
+            transition: 0.5s;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background-color: $color_main;
+            opacity: 0;
+            transition: $trsn;
+        }
+        &.active {
+            box-shadow: 20px 0px 40px rgba(203, 203, 203, 0.3);
+
+            &:before {
+                opacity: 1;
+            }
+            .how {
+                &__item-num {
+                    color: $color_main;
+                }
+                &__item-name {
+                    color: #333333;
+                    @include m-phone() {
+                        font-size: 16px;
+                        line-height: 22px;
+                        font-weight: 700;
+                        color: #333333;
+                    }
+                }
+            }
+            & ~ .how {
+                &__item-info {
+                    z-index: 2;
+                    @include m-phone() {
+                        max-height: 999px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item-num {
+        margin-bottom: 5px;
+    }
+
+    &__item-name {
+    }
+
+    &__item-info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 816px;
+        height: 100%;
+        border: 1px solid #f2f2f2;
+        background-color: $color_white;
+        @include m-tablet-wide() {
+            width: 620px;
+        }
+        @include m-tablet() {
+            width: 420px;
+        }
+        @include m-phone() {
+            width: 100%;
+            position: static;
+            height: auto;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+    }
+    &__item-infocontainer {
+        padding: 40px;
+        @include m-tablet() {
+            padding: 30px;
+        }
+        @include m-phone() {
+            padding: 30px 20px 30px 38px;
+        }
+    }
+
+    &__item-title {
+        position: relative;
+        padding-bottom: 33px;
+        margin-bottom: 67px;
+        @include m-tablet() {
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        @include m-phone() {
+            display: none;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 119px;
+            height: 1px;
+            background-color: #727272;
+        }
+    }
+
+    &__list {
+        padding-left: 110px;
+        @include m-tablet() {
+            padding-left: 0;
+        }
+    }
+
+    &__list-item {
+        position: relative;
+        margin-bottom: 25px;
+        color: #333333;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        &::before {
+            content: "-";
+            position: absolute;
+            top: 0;
+            left: -20px;
+            color: $color_main;
+        }
+    }
+}

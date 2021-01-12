@@ -1,0 +1,159 @@
+html {
+    font-size: $font_size;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+    @include m-phone() {
+        font-size: $font_size_m;
+    }
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    color: $color_text;
+    font-weight: $font_weight;
+    line-height: $line_height;
+    font-family: $font_base;
+    // overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: $color_white;
+    @include m-phone() {
+        line-height: $line_height_m;
+    }
+    &.open {
+        overflow: hidden;
+    }
+}
+
+svg {
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    &:focus,
+    &.focus {
+        outline: none;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.title1 {
+    @include title(42px, 57px, 700);
+    text-transform: uppercase;
+    @include m-phone() {
+        @include title(26px, 35px, 700);
+    }
+}
+.title2 {
+    @include title(40px, 54px, 700);
+    color: #333333;
+    text-transform: uppercase;
+    @include m-phone() {
+        @include title(22px, 30px, 700);
+    }
+}
+
+.title3 {
+    @include title(30px, 41px, 700);
+    color: #333333;
+    text-transform: uppercase;
+    @include m-phone() {
+        @include title(22px, 30px, 700);
+    }
+}
+.title4 {
+    @include title(24px, 33px, 700);
+    color: #323232;
+    @include m-phone() {
+        @include title(18px, 25px, 700);
+    }
+}
+.title5 {
+    @include title(18px, 25px, 700);
+    color: #333333;
+    @include m-phone() {
+        @include title(18px, 25px, 700);
+    }
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    transition: $trsn;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    flex: 1 0 auto;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1230px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    @include m-tablet-wide() {
+        max-width: 1024px;
+    }
+    @include m-tablet() {
+        max-width: 768px;
+    }
+    @include m-phone() {
+        max-width: 425px;
+        width: 100%;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+[role="button"] {
+    cursor: pointer;
+}
+
+.hidden_desktop {
+    display: none !important;
+    @include m-phone() {
+        display: block !important;
+    }
+}
+.hidden_mobile {
+    @include m-phone() {
+        display: none !important;
+    }
+}

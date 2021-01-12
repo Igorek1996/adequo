@@ -1,0 +1,42 @@
+.btn {
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: $trsn;
+    white-space: nowrap;
+    max-width: 100%;
+    padding: 11px 32px 13px;
+    border: 1px solid $color_main;
+    -webkit-appearance: none;
+
+    &__full {
+        color: $color_white;
+        background-color: $color_main;
+        &:hover {
+            border: 1px solid $color_main_hover;
+            background-color: $color_main_hover;
+        }
+    }
+    &__empty {
+        color: $color_main;
+        background-color: transparent;
+        &:hover {
+            border: 1px solid $color_main_hover;
+            color: $color_main_hover;
+        }
+    }
+
+    @include m-phone() {
+        padding: 11px 24px 13px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
